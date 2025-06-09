@@ -36,7 +36,7 @@ Le projet est organisé en plusieurs classes principales :
 * **`Gobelin.java`**, **`Troll.java`**, **`Dragon.java`** : Étendent `Ennemi` et définissent les statistiques et les plages de dégâts spécifiques à chaque type d'ennemi.
 * **`CombatManager.java`** : Gère la logique principale du jeu, y compris l'initialisation du héro, la génération des ennemis, le déroulement des combats tour par tour, la gestion des actions du joueur, et les conditions de victoire/défaite. La méthode `demarrerPartie()` a été refactorisée pour plus de clarté.
 * **`PouvoirSpecial.java`** (Interface) : Définit le contrat pour l'utilisation d'un pouvoir spécial.
-* **`InvalidActionChoiceException.java`** (Exception Personnalisée) : Gère les erreurs de saisie de l'utilisateur.
+* **`InvalideActionChoisieException.java`** (Exception Personnalisée) : Gère les erreurs de saisie de l'utilisateur.
 
 ---
 
