@@ -1,8 +1,23 @@
 package rpg.personnages;
 
+import java.util.Random;
+
 public class Dragon extends Ennemi{
     public Dragon() {
-        super("Dragon", 200, 50, 30);
+        super("Dragon", 150, 0, 15);
+    }
+
+    /**
+     * Surcharge de la méthode pour générer la valeur d'attaque du Dragon.
+     * L'attaque sera 25, 30, 35, 40, 45, 50.
+     * @return La valeur d'attaque aléatoire (25, 30, 35, 40, 45, 50).
+     */
+    @Override
+    protected int getDegatsInfliges() {
+        Random random = new Random();
+        int choixMultiplicateur = random.nextInt(6);
+
+        return (choixMultiplicateur * 5) + 25;
     }
 
     @Override
