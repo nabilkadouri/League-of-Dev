@@ -21,7 +21,6 @@ Ce projet est un jeu de rôle (RPG) textuel simple développé en Java. Il offre
 * **Gestion de la Potion** : Le héro dispose d'une potion qui restaure des PV, mais son utilisation est stratégique : elle ne peut être activée que si les PV du héro se situent entre 5 et 170.
 * **Restauration de Mana** : Après chaque victoire, le héro récupère du mana, encourageant l'utilisation du pouvoir spécial.
 * **Objectif de Victoire** : Le jeu se termine lorsque le héro a vaincu 5 ennemis, ou s'il est vaincu en combat.
-* **Conseils Stratégiques** : Des messages d'aide sont affichés au joueur pour l'assister dans ses choix d'action (utilisation de pouvoir spécial ou de potion) en fonction de la situation.
 * **Gestion Robuste des Saisies** : Une exception personnalisée (`InvalidActionChoiceException`) est utilisée pour gérer les entrées utilisateur incorrectes, offrant un feedback clair et permettant au joueur de retenter sa saisie.
 
 ---
