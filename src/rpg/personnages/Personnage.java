@@ -3,12 +3,14 @@ package rpg.personnages;
 public abstract class  Personnage {
     protected String nom;
     protected int pv;
+    protected int pvMax;
     protected int attaque;
     protected int defense;
 
     public Personnage(String nom, int pv, int attaque, int defense) {
         this.nom = nom;
         this.pv = pv;
+        this.pvMax = pv;
         this.attaque = attaque;
         this.defense = defense;
     }
@@ -30,6 +32,10 @@ public abstract class  Personnage {
         this.pv = pv;
     }
 
+    public int getPvMax() {
+        return pvMax;
+    }
+
     public int getAttaque() {
         return attaque;
     }
@@ -47,16 +53,29 @@ public abstract class  Personnage {
     }
 
     //Méthodes
+    /**
+     * Cette méthode est conçue pour être surchargée par les sous-classes
+     * afin de définir leur propre logique de dégâts aléatoires.
+     * Par défaut, elle retourne l'attribut d'attaque fixe du personnage.
+     * @return Les dégâts "bruts" avant calcul de la défense.
+     */
+    protected int getDegatsInfliges() {
+        return this.attaque;
+    }
 
     /**
      * Méthode qui permet d'effectuer une attaque de la part d'un personnage
      * @param cible représente un hero ou un ennemi
-     * Affiche les noms des personnages attaquant et recevant ainsi que les dégâts subit par l'attaque
+     * Affiche les noms des personnages attaquants et les dégâts subit par cette attaque
      */
     public void attaquer(Personnage cible) {
-        int degatInflige = this.attaque - this.defense;
+        int degatsBruts = this.getDegatsInfliges();
+        int degatInflige = degatsBruts - cible.getDefense();
+        if (degatInflige < 5) {
+            degatInflige = 5;
+        }
         cible.prendreDegat(degatInflige);
-        System.out.println(this.nom + " attaque " + cible.getNom() + ", dégâts infligé " + degatInflige);
+        System.out.println(this.nom + " attaque " + cible.getNom() + ", et inflige " + degatInflige + " de dégâts !");
     }
 
     /**
@@ -85,11 +104,6 @@ public abstract class  Personnage {
 
     @Override
     public String toString() {
-        return "Personnage{" +
-                "nom='" + nom + '\'' +
-                ", pv=" + pv +
-                ", attaque=" + attaque +
-                ", defense=" + defense +
-                '}';
+        return "Nom=" + nom + ", Pv=" + pv + "/" + pvMax + ", Défense=" + defense + " | ";
     }
 }
