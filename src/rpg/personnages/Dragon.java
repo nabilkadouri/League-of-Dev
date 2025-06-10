@@ -4,7 +4,7 @@ import java.util.Random;
 
 public class Dragon extends Ennemi{
     public Dragon() {
-        super("Dragon", 150, 0, 15);
+        super("Dragon", 130, 0, 15);
     }
 
     /**
