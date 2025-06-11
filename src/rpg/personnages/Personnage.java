@@ -72,11 +72,15 @@ public abstract class  Personnage {
     public void attaquer(Personnage cible) {
         int degatsBruts = this.getDegatsInfliges();
         int degatInflige = degatsBruts - cible.getDefense();
-        if (degatInflige < 5) {
+        /*if (degatInflige < 5) {
             degatInflige = 5;
-        }
+        }*/
         cible.prendreDegat(degatInflige);
-        System.out.println(this.nom + " attaque " + cible.getNom() + ", et inflige " + degatInflige + " de dégâts !");
+        if(degatInflige == 0 ){
+            System.out.println(this.nom + " a raté son attaque,  " + cible.getNom() + " a esquive !");
+        }else {
+            System.out.println(this.nom + " attaque " + cible.getNom() + ", et inflige " + degatInflige + " de dégâts !");
+        }
     }
 
     /**
