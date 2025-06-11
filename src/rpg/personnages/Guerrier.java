@@ -4,12 +4,13 @@ import java.util.Random;
 
 public class Guerrier extends Hero {
     private int rage;
-    private final int RAGE_MAX = 100;
+    public final int RAGE_MAX = 100;
 
-    public Guerrier(String nom, int pv, int attaque, int defense) {
-        super(nom, 200, 25, 15);
+    public Guerrier(String nom) {
+        super(nom, 200, 30, 15);
         this.rage = 0;
     }
+
 
     public int getRage() {
         return rage;
@@ -39,7 +40,7 @@ public class Guerrier extends Hero {
     public void utiliserPouvoir(Personnage cible) {
         int coutRage = 30;
         if (this.rage >= coutRage) {
-            int degatsHeroiques = (this.attaque * 3) - cible.getDefense();
+            int degatsHeroiques = (this.attaque * 2) - cible.getDefense();
             if (degatsHeroiques < 25) {
                 degatsHeroiques = 25;
             }

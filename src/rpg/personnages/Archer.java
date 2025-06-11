@@ -4,13 +4,14 @@ import java.util.Random;
 
 public class Archer extends Hero {
     private int fleches;
-    private final int FLECHES_MAX = 50;
+    public final int FLECHES_MAX = 50;
 
 
-    public Archer(String nom, int pv, int attaque, int defense) {
+    public Archer(String nom) {
         super(nom, 120, 20, 8);
         this.fleches = FLECHES_MAX;
     }
+
 
     public int getFleches() {
         return fleches;
@@ -41,7 +42,7 @@ public class Archer extends Hero {
     public void utiliserPouvoir(Personnage cible) {
         int coutFleches = 10;
         if(this.fleches >= coutFleches){
-            int degatsRapides = (this.attaque * 2 ) - cible.getDefense();
+            int degatsRapides = (this.attaque * 3) - cible.getDefense();
             if(degatsRapides < 15 ) {
                 degatsRapides = 15;
             }

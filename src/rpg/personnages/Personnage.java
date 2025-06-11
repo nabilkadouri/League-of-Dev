@@ -15,6 +15,7 @@ public abstract class  Personnage {
         this.defense = defense;
     }
 
+
     //Guetters et Setters
     public String getNom() {
         return nom;

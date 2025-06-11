@@ -16,6 +16,7 @@ public class Hero extends Personnage implements PouvoirSpecial {
         this.compteurVictoire = 0;
     }
 
+
     // --- Getters et Setters ---
     public int getNombreDePotions() {
         return nombreDePotions;
